@@ -4,6 +4,7 @@ import pl.edu.agh.regexp.common.StatisticExtractor;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -12,7 +13,7 @@ import java.util.regex.Pattern;
 public class StatisticExtractor2 implements StatisticExtractor<Collection<InternalReference>> {
 
     private static final String WC = "\\s*\n*\\s*"; //whitechars
-    private static final String ARTICLE_REGEX = "^\\s{5,}(Art\\. (?<ArtNo>\\d+)\\.)" + "(?<content>.+?)" + "(?=Art\\. \\d+\\.)";
+    private static final String ARTICLE_REGEX = "(Art\\. (?<ArtNo>\\d+)\\.)" + "(?<content>.+?)" + "(?=Art\\. \\d+\\.)";
     private static final Pattern ARTICLE = Pattern.compile(ARTICLE_REGEX, Pattern.MULTILINE|Pattern.DOTALL);
     private static final Pattern INT_REF1 = Pattern.compile("([Aa]rt\\." + WC + "(?<ArtNo>\\d+))?" + WC +"ust\\." + WC +  "(?<ustNo>\\d+)" + WC + "(pkt" + WC + "(?<pktBegin>\\d+)"  + "(-(?<pktEnd>\\d+))?)?" );
 
@@ -42,7 +43,13 @@ public class StatisticExtractor2 implements StatisticExtractor<Collection<Intern
         String pktEnd = matcher.group("pktEnd");
         if (artNo == null) {
             artNo = parsedArtNo;
+        }if(pktBegin == null){
+            return Collections.singletonList(InternalReference.builder()
+                    .art(Integer.parseInt(artNo))
+                    .ust(Integer.parseInt(ustNo))
+                    .build());
         }
+
         Collection<InternalReference> refs = new ArrayList<>();
 
         if(pktEnd != null) {
