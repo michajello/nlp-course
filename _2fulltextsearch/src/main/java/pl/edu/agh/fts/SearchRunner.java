@@ -13,14 +13,17 @@ import pl.edu.agh.fts.common.PropertyConstants;
 public class SearchRunner implements CommandLineRunner{
 
     private final ElasticSearchClient elasticSearchClient;
+    private final ConfigurableApplicationContext ctx;
 
     @Autowired
-    public SearchRunner(ElasticSearchClient elasticSearchClient) {
+    public SearchRunner(ElasticSearchClient elasticSearchClient, ConfigurableApplicationContext ctx) {
         this.elasticSearchClient = elasticSearchClient;
+        this.ctx = ctx;
     }
 
     @Override
     public void run(String... args) throws Exception {
-        elasticSearchClient.setup();
+        elasticSearchClient.searchStatistics();
+        ctx.close();
     }
 }

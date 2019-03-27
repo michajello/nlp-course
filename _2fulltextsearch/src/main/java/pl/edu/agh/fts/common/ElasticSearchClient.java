@@ -1,20 +1,28 @@
 package pl.edu.agh.fts.common;
 
+import com.alibaba.fastjson.JSONObject;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.http.HttpEntity;
 import org.apache.http.HttpHost;
+import org.apache.http.util.EntityUtils;
 import org.elasticsearch.action.ActionFuture;
 import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.index.IndexResponse;
-import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.client.Client;
+import org.elasticsearch.client.Request;
+import org.elasticsearch.client.Response;
 import org.elasticsearch.client.RestClient;
 import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.common.transport.TransportAddress;
 import org.elasticsearch.common.xcontent.XContentType;
-import org.elasticsearch.search.builder.SearchSourceBuilder;
 import org.elasticsearch.transport.client.PreBuiltTransportClient;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Component;
+import pl.edu.agh.fts.common.data.ResponseDTO;
+import pl.edu.agh.fts.common.data.TextDTO;
 import pl.edu.agh.fts.util.DirectoryExplorer;
 import pl.edu.agh.fts.util.FileReader;
 
@@ -23,6 +31,8 @@ import java.io.IOException;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.nio.file.Path;
+import java.util.Map;
+import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
 @Component
@@ -36,11 +46,11 @@ public class ElasticSearchClient {
             "              \"analyzer\" : {\n" +
             "                    \"synonym\" : {\n" +
             "                        \"tokenizer\" : \"standard\",\n" +
-            "                        \"filter\" : [\"kodeks_synonym\", \"lowercase\",\"morfologik_stem\"]\n" +
+            "                        \"filter\" : [\"pl_synonyms\", \"lowercase\",\"morfologik_stem\"]\n" +
             "                    }\n" +
             "                },\n" +
             "              \"filter\": {\n" +
-            "                  \"kodeks_synonym\" : {\n" +
+            "                  \"pl_synonyms\" : {\n" +
             "                    \"type\" : \"synonym\",\n" +
             "                        \"synonyms\" : [\n" +
             "                            \"kpk => kodeks postępowania karnego\",\n" +
@@ -124,13 +134,37 @@ public class ElasticSearchClient {
     }
 
 
-    public void searchStatistics() {
-        IndexRequest request = new IndexRequest(indexName, indexType);
-        SearchRequest seachRequest = new SearchRequest(indexName);
+    public void searchStatistics() throws IOException {
+        Request request = new Request(HttpMethod.GET.toString(), String.format("/%s/%s/_search" ,indexName, indexType));
+        request.setJsonEntity(Query.billCount);
+        Response response = restClient.performRequest(request);
 
-        SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
-//        searchSourceBuilder.
-//        seachRequest.source(searchSourceBuilder);
+        System.out.println("Odmiany słowa \"ustawa\": " + extractNumberFromBody(response));
+
+        request = new Request(HttpMethod.GET.toString(), String.format("/%s/%s/_search" ,indexName, indexType));
+        request.setJsonEntity(Query.comesIntoForcePhrase);
+        response = restClient.performRequest(request);
+
+        System.out.println("Odmiany słowa \"wchodzi w życie\": " + extractNumberFromBody(response));
+
+        request = new Request(HttpMethod.GET.toString(), String.format("/%s/%s/_search" ,indexName, indexType));
+        request.setJsonEntity(Query.codeOfCivilProcedure);
+        response = restClient.performRequest(request);
+        System.out.println("Odmiany słowa \"kodeks postępowania cywilnego\": " + extractNumberFromBody(response));
+        
+
+    }
+
+    private int extractNumberFromBody(Response response){
+        Map<String, Object> map = null;
+        try {
+            map = objectMapper.readValue( EntityUtils.toString(response.getEntity()), new TypeReference<Map<String, Object>>() {});
+        } catch (IOException e) {
+            e.printStackTrace();
+            return 0;
+        }
+        map = (Map<String, Object>) map.get("hits");
+        return (int) map.get("total");
     }
 
     @PreDestroy

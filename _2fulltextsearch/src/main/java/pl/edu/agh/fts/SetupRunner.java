@@ -24,5 +24,6 @@ public class SetupRunner implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         elasticSearchClient.setup();
+        ctx.close();
     }
 }

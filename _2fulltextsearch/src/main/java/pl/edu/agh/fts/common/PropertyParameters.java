@@ -9,5 +9,4 @@ import org.springframework.stereotype.Component;
 @Component
 public class PropertyParameters {
     private String dirPath;
-    private String filePathname;
 }
