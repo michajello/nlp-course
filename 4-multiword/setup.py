@@ -57,8 +57,3 @@ print(es.indices.create(
 )
 )
 
-dataset_path = "../dataset"
-
-for file in listdir(dataset_path):
-    with open(dataset_path + "/" + file, mode='r', encoding='utf-8') as doc:
-        es.create(index=index_name, id=file, doc_type="_doc", body={"text": doc.read()})
