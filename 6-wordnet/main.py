@@ -1,4 +1,5 @@
 from pprint import pprint
+import itertools
 
 import requests
 
@@ -37,6 +38,8 @@ def get_synsets_closure(synset_id, relation_id):
 
     return closure
 
+def flat_list(l):
+    return [item for sublist in l for item in sublist]
 
 def map_meaning_result(x):
     return {"id": x["id"],
@@ -80,18 +83,16 @@ accident_meaning = [map_meaning_result(x) for x in search_meanings("wypadek") if
 hyponym_id = 10
 
 accident_synset_id = get_synsetid_by_sense_id(accident_meaning[0]['id'])
-accident_hyphonym = get_synset_relations(accident_synset_id, hyponym_id);
+accident_hyphonym = get_synset_relations(accident_synset_id, hyponym_id)
 
-accident_hyphonym_synsets = [get_synset_by_id(x['synsetFrom']['id']) for x in accident_hyphonym]
-accident_hyphonym_words = [map_meaning_result(x[0]) for x in accident_hyphonym_synsets]
+accident_hyphonym_synsets = flat_list([get_synset_by_id(x['synsetFrom']['id']) for x in accident_hyphonym])
+accident_hyphonym_words = [map_meaning_result(x) for x in accident_hyphonym_synsets]
 
 pprint(accident_hyphonym_words)
 
 #6
-second_order_accident_hyphonym = [get_synset_relations(x[0]['id'], hyponym_id) for x in accident_hyphonym_synsets ]
-print(len(second_order_accident_hyphonym))
-second_order_accident_hyphonym_synsets = [get_synset_by_id(x[0]['synsetFrom']['id']) for x in second_order_accident_hyphonym if x]
-print(len(second_order_accident_hyphonym_synsets))
-second_order_accident_hyphonym_words = [map_meaning_result(x[0]) for x in second_order_accident_hyphonym_synsets]
+second_order_accident_hyphonym = flat_list([get_synset_relations(get_synsetid_by_sense_id(x['id']), hyponym_id) for x in accident_hyphonym_synsets ])
+second_order_accident_hyphonym_synsets = flat_list([get_synset_by_id(x['synsetFrom']['id']) for x in second_order_accident_hyphonym if x])
+second_order_accident_hyphonym_words = [map_meaning_result(x) for x in second_order_accident_hyphonym_synsets]
 print("TASK 6 Find second-order hyponyms")
 pprint(second_order_accident_hyphonym_words)
