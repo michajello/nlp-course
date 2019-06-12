@@ -1,0 +1,136 @@
+/media/michaello/d35ae87a-87e4-487f-b88e-265184a4fabd/nlp-course/9-ner/venv/bin/python /media/michaello/d35ae87a-87e4-487f-b88e-265184a4fabd/nlp-course/9-ner/main.py
+[(('nam_pro_media_periodic', 'Dz . U .'), 420),
+ (('nam_loc_gpe_country', 'Rzeczypospolitej Polskiej'), 132),
+ (('nam_org_institution', 'Urząd Patentowy'), 104),
+ (('nam_org_institution', 'Skarbu Państwa'), 91),
+ (('nam_org_institution', 'Minister Spraw Wewnętrznych'), 78),
+ (('nam_org_institution', 'Rada Ministrów'), 71),
+ (('nam_org_institution', 'Najwyższej Izby Kontroli'), 68),
+ (('nam_org_organization', 'Kościoła'), 61),
+ (('nam_oth_currency', 'zł'), 55),
+ (('nam_org_institution', 'Skarb Państwa'), 51),
+ (('nam_liv_person', 'Gospodarki Morskiej'), 48),
+ (('nam_org_institution', 'Funduszu Pracy'), 48),
+ (('nam_oth_currency', 'złotych'), 48),
+ (('nam_adj_country', 'polski'), 43),
+ (('nam_org_institution', 'Urzędu Patentowego'), 41),
+ (('nam_org_institution', 'Prezes Rady Ministrów'), 40),
+ (('nam_org_institution', 'Polskiej Organizacji Turystycznej'), 40),
+ (('nam_org_institution', 'Minister Finansów'), 39),
+ (('nam_org_institution', 'Urzędzie Patentowym'), 36),
+ (('nam_org_organization', 'Państwowej Straży Pożarnej'), 35),
+ (('nam_org_organization', 'RON'), 35),
+ (('nam_org_institution', 'Ministrem Finansów'), 33),
+ (('nam_org_institution', 'Prezes Najwyższej Izby Kontroli'), 32),
+ (('nam_org_institution', 'Zakładu Ubezpieczeń Społecznych'), 31),
+ (('nam_org_institution', 'Prezesa Najwyższej Izby Kontroli'), 30),
+ (('nam_pro_title', 'Monitor Polski'), 27),
+ (('nam_org_institution', 'Fundusz Pracy'), 27),
+ (('nam_org_institution', 'Prezesa Narodowego Banku Polskiego'), 26),
+ (('nam_org_institution', 'Minister Transportu i Gospodarki Morskiej'), 25),
+ (('nam_org_institution', 'Zakład Ubezpieczeń Społecznych'), 25),
+ (('nam_loc_gpe_country', 'Polsce'), 24),
+ (('nam_org_institution', 'Dzienniku Urzędowym Rzeczypospolitej Polskiej "'),
+  24),
+ (('nam_org_institution', 'Sejmu'), 24),
+ (('nam_org_institution', 'Prezes Głównego Urzędu Statystycznego'), 23),
+ (('nam_org_institution', 'Ministra Spraw Wewnętrznych'), 22),
+ (('nam_loc_gpe_city', 'Warszawie'), 21),
+ (('nam_org_institution', 'Agencji'), 21),
+ (('nam_org_institution', 'Prezes Urzędu'), 21),
+ (('nam_pro_title_document', 'Kodeksu rodzinnego'), 20),
+ (('nam_org_institution', 'Ministra Finansów'), 19),
+ (('nam_org_institution', 'Główny Urząd Statystyczny'), 19),
+ (('nam_org_institution', 'Prezes Urzędu Patentowego'), 19),
+ (('nam_org_institution', 'Prezesa Urzędu Patentowego'), 19),
+ (('nam_org_institution', 'Prezesa Głównego Urzędu Statystycznego'), 18),
+ (('nam_pro_title_document', 'Kodeksu karnego'), 18),
+ (('nam_org_institution', 'Banku Gospodarki Żywnościowej'), 18),
+ (('nam_org_institution', 'Prezesa Rady Ministrów'), 17),
+ (('nam_org_institution', 'Urzędu Rady Ministrów'), 17),
+ (('nam_org_institution', 'Krajowego Biura Wyborczego'), 17),
+ (('nam_oth_currency', 'ECU'), 16)]
+nam_pro
+ Dz . U . [406]
+ Dzienniku Urzędowym Rzeczypospolitej Polskiej [28]
+ Monitor Polski [24]
+ Kodeksu karnego [23]
+ Kodeksu postępowania karnego [23]
+ Kodeksu karnego wykonawczego [15]
+ Delegata Rządu [14]
+ Kodeksu postępowania administracyjnego [13]
+ Konwencji [10]
+ o zmianie niektórych ustaw [8]
+nam_org
+ Urząd Patentowy [99]
+ Skarbu Państwa [90]
+ Minister Spraw Wewnętrznych [86]
+ Rada Ministrów [72]
+ Najwyższej Izby Kontroli [66]
+ Polskiej Organizacji Turystycznej [54]
+ Skarb Państwa [51]
+ Kościoła [49]
+ Głównego Urzędu Statystycznego [46]
+ Funduszu Pracy [44]
+nam_loc
+ Rzeczypospolitej Polskiej [92]
+ Polsce [24]
+ Warszawie [20]
+ Polski [17]
+ Warszawy [16]
+ Handlu [14]
+ Zysk [11]
+ Warszawa [9]
+ Gospodarki Morskiej [9]
+ Rzeczpospolita Polska [6]
+nam_adj
+ polski [44]
+ polskiej [11]
+ polskich [10]
+ polskiego [7]
+ polskim [6]
+ polskimi [4]
+ mazowieckiego [2]
+ wojewódzkiego [2]
+ polską [2]
+ polskie [2]
+nam_fac
+ Zarządu Kościoła [5]
+ Kościoła Adwentystów Dnia Siódmego [3]
+ Zarząd Kościoła [2]
+ Kościoła Ewangelicko - Metodystycznego [2]
+ Polskiego Autokefalicznego Kościoła Prawosławnego [1]
+ Kościoła Ewangelicko - Reformowanego [1]
+ Straży Granicznej [1]
+ Obrony Narodowej [1]
+ placów [1]
+ Specjalnym Prawem Ciągnienia [1]
+nam_liv
+ Gospodarki Morskiej [12]
+ Główny Inspektor [12]
+ Głównego Inspektora [4]
+ Art [3]
+ Najwyższego [3]
+ Gospodarki Żywnościowej [3]
+ Michała Beliny [3]
+ Północnych [3]
+ Straży Granicznej [2]
+ Bóg [2]
+nam_oth
+ zł [47]
+ złotych [32]
+ ECU [27]
+ Minister Edukacji Narodowej [9]
+ + - - - - - - - + - - - - - - - - - - - - - + - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - + [4]
+ Ă - - - - - Ĺ - - - - - - - - - - - - - - - - - - - Ĺ - - - - - - - - - - - - - - - - - - - - - - - [2]
+ Ministrem Edukacji Narodowej [2]
+ + - - - - - - - + - - - - - - - - - - - - - + - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - + [2]
+ + - - - - - - - + - - - - - - - - - - - - - + - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - + [2]
+ złoty [1]
+nam_num
+ 112 [4]
+nam_eve
+ Monitor Polski [3]
+ Strażą Graniczną [1]
+ Centralnego Ośrodka [1]
+ Najwyższej Izbie Kontroli [1]
