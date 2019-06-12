@@ -1,0 +1,125 @@
+<_csv.reader object at 0x7f19b7703c18>
+TASK 6
+[('dz.u', 5768),
+ ('złozić', 1718),
+ ('margin', 1111),
+ ('późn', 1080),
+ ('family', 543),
+ ('text', 531),
+ ('mso', 448),
+ ('bottom', 399),
+ ('face', 327),
+ ('panose', 326),
+ ('serif', 325),
+ ('gmo', 298),
+ ('times', 296),
+ ('iv', 272),
+ ('sa', 266),
+ ('name', 254),
+ ('size', 248),
+ ('left', 233),
+ ('right', 233),
+ ('sww', 227),
+ ('dz.urz', 218),
+ ('align:justify', 200),
+ ('skw', 196),
+ ('velocity', 182),
+ ('vide', 182),
+ ('ex', 169),
+ ('height', 168),
+ ('line', 168),
+ ('ike', 162),
+ ('vi', 154)]
+
+TASK 7
+[('biorównoważności', 3),
+ ('lit.g', 3),
+ ('sanitarnoepidemiologiczne', 3),
+ ('ixa', 3),
+ ('szkolnowychowawczym', 3),
+ ('hagera', 3),
+ ('wymienio', 3),
+ ('apostille', 3),
+ ('zasiedleń', 3),
+ ('xxxvi', 3),
+ ('a.t.a', 3),
+ ('cidr', 3),
+ ('gigadżul', 3),
+ ('ksow', 3),
+ ('cannabis', 3),
+ ('sativa', 3),
+ ('publicz', 3),
+ ('wypożyczeń', 3),
+ ('gemeinschaft', 3),
+ ('międzykościelnych', 3),
+ ('szkolnowychowawczych', 3),
+ ('oszczędnościowokredytowych', 3),
+ ('pra', 3),
+ ('pogórniczych', 3),
+ ('wodnobłotnych', 3),
+ ('zadrzewieniach', 3),
+ ('lit.e', 3),
+ ('przeprowa', 3),
+ ('winopodobne', 3),
+ ('winopodobnych', 3)]
+ Task8
+('biorównoważności', 3)
+[('nierównoważności', 2), ('równoważności', 3), ('nierównoważnością', 3)]
+('lit.g', 3)
+[('litwę', 2), ('lito', 2), ('litrę', 2)]
+('sanitarnoepidemiologiczne', 3)
+[]
+('ixa', 3)
+[('ina', 1), ('iga', 1), ('iwa', 1)]
+('szkolnowychowawczym', 3)
+[]
+('hagera', 3)
+[('hauera', 1), ('hagena', 1), ('habera', 1)]
+('wymienio', 3)
+[('wymieniło', 1), ('wymienno', 1), ('wymienię', 1)]
+('apostille', 3)
+[('apostilbie', 2), ('apostilb', 2), ('apostilbu', 2)]
+('zasiedleń', 3)
+[('zasiedzeń', 1), ('zasiedlaj', 2), ('zasiedla', 2)]
+('xxxvi', 3)
+[('axli', 3), ('levi', 3), ('xml-i', 3)]
+('a.t.a', 3)
+[('astra', 2), ('altea', 2), ('autka', 2)]
+('cidr', 3)
+[('ciur', 1), ('cydr', 1), ('cedr', 1)]
+('gigadżul', 3)
+[('megadżul', 2), ('kilodżul', 3), ('zgadul', 3)]
+('ksow', 3)
+[('kosow', 1), ('osow', 1), ('kęsow', 1)]
+('cannabis', 3)
+[('kanabis', 2), ('annanie', 3), ('mannanie', 3)]
+('sativa', 3)
+[('natia', 2), ('safina', 2), ('sanica', 2)]
+('publicz', 3)
+[('publice', 1), ('publiczną', 2), ('kubicz', 2)]
+('wypożyczeń', 3)
+[('wypożyczże', 2), ('wypożyczam', 2), ('wypożyczy', 2)]
+('gemeinschaft', 3)
+[]
+('międzykościelnych', 3)
+[]
+('szkolnowychowawczych', 3)
+[]
+('oszczędnościowokredytowych', 3)
+[]
+('pra', 3)
+[('praj', 1), ('pry', 1), ('kra', 1)]
+('pogórniczych', 3)
+[('pożarniczych', 2), ('górniczych', 2), ('pokutniczych', 3)]
+('wodnobłotnych', 3)
+[]
+('zadrzewieniach', 3)
+[('zakrzewieniach', 1), ('zadrzewniach', 2), ('zadrzewienia', 2)]
+('lit.e', 3)
+[('lite', 1), ('liwce', 2), ('litwę', 2)]
+('przeprowa', 3)
+[('przepruwa', 1), ('przeprawa', 1), ('przekrywa', 2)]
+('winopodobne', 3)
+[('wełnopodobne', 2), ('świniopodobne', 2), ('wełnopodobna', 3)]
+('winopodobnych', 3)
+[('wełnopodobnych', 2), ('świniopodobnych', 2), ('ciałopodobnych', 3)]
